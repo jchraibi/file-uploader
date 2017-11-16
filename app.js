@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var formidable = require('formidable');
 var fs = require('fs');
+var serveIndex = require('serve-index');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', serveIndex(__dirname + '/uploads'));
