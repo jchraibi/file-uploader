@@ -6,7 +6,7 @@ var fs = require('fs');
 var serveIndex = require('serve-index');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('uploads');
+app.use(express.static('uploads'));
 //app.use('/uploads', serveIndex(__dirname + '/uploads'));
 
 app.get('/', function(req, res){
