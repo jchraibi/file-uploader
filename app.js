@@ -6,8 +6,8 @@ var fs = require('fs');
 var serveIndex = require('serve-index');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('uploads'));
-//app.use('/uploads', serveIndex(__dirname + '/uploads'));
+app.use(express.static('public/results'));
+app.use('/results', serveIndex(__dirname + '/public/results'));
 
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, 'views/index.html'));
@@ -22,7 +22,7 @@ app.post('/upload', function(req, res){
   form.multiples = true;
 
   // store all uploads in the /uploads directory
-  form.uploadDir = path.join(__dirname, '/uploads');
+  form.uploadDir = path.join(__dirname, '/public/results');
 
   // every time a file has been uploaded successfully,
   // rename it to it's orignal name
